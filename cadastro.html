@@ -1,0 +1,58 @@
+<!-- cadastro.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Cliente</title>
+  <link rel="crediamigoicon" href="crediamigoicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main>      
+
+    <h1>Cadastro de Cliente</h1>
+
+    <form id="cadastroForm">
+      <label for="nome">Nome do Cliente:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="unidade">Unidade PROCON ou sala do Empreendedor:</label>
+      <input type="text" id="unidade" name="unidade" required>
+
+      <label for="bairro">Bairro:</label>
+      <input type="text" id="bairro" name="bairro" required>
+
+      <label for="cidade">Cidade:</label>
+      <input type="text" id="cidade" name="cidade" required>
+
+      <label for="endereco">Endereço:</label>
+      <input type="text" id="endereco" name="endereco" required>
+
+      <label for="contato">Número para contato:</label>
+      <input type="tel" id="contato" name="contato" required>
+
+      <label for="atividade">Atividade comercial:</label>
+      <input type="text" id="atividade" name="atividade" required>
+
+      <label for="tempo">Tempo de atividade:</label>
+      <input type="text" id="tempo" name="tempo" required>      
+
+      <label for="observacao">Observação (máx 2500 caracteres):</label>
+      <textarea id="observacao" name="observacao" maxlength="2500"></textarea>
+
+      <label>
+        <input type="checkbox" id="compartilhar" required>
+        Aceito compartilhar minhas informações
+      </label>
+
+      <button type="submit">SALVAR INFORMAÇÕES</button>
+    </form>
+    <button onclick="window.location.href='dados.html'">Ir para Dados</button>
+    <button onclick="window.location.href='consulta_cliente.html'">Consultar Cliente</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

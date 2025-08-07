@@ -1,0 +1,49 @@
+<!-- dados_atualizado.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dados Atualizados</title>
+  <link rel="stylesheet" href="dados_atualizados.css" />
+</head>
+<body>
+  <main>
+    <h1>Todos os Clientes Atualizados</h1>
+    <table id="tabela-clientes">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Bairro</th>
+          <th>Cidade</th>
+          <th>Endereço</th>
+          <th>Contato</th>
+          <th>Atividade</th>
+          <th>Tempo</th>
+          <th>Observação</th>
+          <th>Status Cliente</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <button onclick="window.location.href='cadastro.html'">Voltar ao Cadastro</button>
+  </main>
+  <script>
+    const consulta_dados = JSON.parse(localStorage.getItem("clientes")) || [];
+    const tbody = document.querySelector("#tabela-clientes tbody");
+    consulta_dados.forEach(c => {
+      const tr = document.createElement("tr");
+      [
+        c.nome, c.bairro, c.cidade, c.endereco,
+        c.contato, c.tempo, c.atividade,
+        c.observacao, c.statusCliente
+      ].forEach(dado => {
+        const td = document.createElement("td");
+        td.textContent = dado;
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+  </script>
+  </body>
+  </html>

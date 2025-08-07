@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Possíveis relacionamentos de Clientes</title>
+  <link rel="stylesheet" href="style_dados.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Possíveis relacionamentos de Clientes</h1>
+
+    <label for="filtro">Pesquisar por Bairro</label>
+    <input type="text" id="filtro" placeholder="Digite o bairro...">
+
+    <table id="tabela">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Unidade</th>
+          <th>Bairro</th>
+          <th>Cidade</th>
+          <th>Endereço</th>
+          <th>Contato</th>
+          <th>Atividade</th>
+          <th>Tempo</th>
+          <th>Observação</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <button id="exportar">Exportar em xlsx</button>
+    <button onclick="window.location.href='cadastro.html'">Voltar ao Cadastro</button>
+    <button id="limpar" class="botao-limpar">Limpar informações</button>
+  </main>
+
+  <script src="script_dados.js"></script>
+</body>
+</html>

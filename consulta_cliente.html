@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulta de Clientes</title>
+  <link rel="stylesheet" href="design_consulta.css" />
+</head>
+<body>
+  <main>
+    <h1>Consulta de Clientes</h1>
+
+    <label for="nomeBusca">Digite o nome do cliente:</label>
+    <input type="text" id="nomeBusca" />
+    <button id="buscarCliente">Buscar</button>
+
+    <div id="dadosCliente" style="display:none;">
+      <label>Nome do Cliente:<input type="text" id="nome" disabled /></label>
+      <label>Bairro:<input type="text" id="bairro" disabled /></label>
+      <label>Cidade:<input type="text" id="cidade" disabled /></label>
+      <label>Endereço:<input type="text" id="endereco" disabled /></label>
+      <label>Contato:<input type="text" id="contato" disabled /></label>
+      <label>Tempo:<input type="text" id="tempo" disabled /></label>
+      <label>Atividade:<input type="text" id="atividade" disabled /></label>      
+      <label>Observação:<textarea id="observacao" disabled></textarea></label>
+<fieldset>
+      <h3>Status do Cliente</h3>
+      <label><input type="radio" name="status" value="Contatado" /> Cliente Contatado</label>
+      <label><input type="radio" name="status" value="Efetivado" /> Cliente Efetivado</label>
+      <label><input type="radio" name="status" value="Não Efetivado" /> Cliente Não Efetivado</label>
+</fieldset>
+      
+      <button id="salvarStatus">Salvar Atualização</button>
+    </div>
+
+    <button onclick="window.location.href='cadastro.html'">Voltar para Cadastro</button>
+    <button onclick="window.location.href='dados_atualizados.html'">Dados Atualizado</button>
+  </main>
+  <script src="consulta_dados.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: white url('crediamigoicon.png') no-repeat center center fixed;
+  background-size: contain;
+  color: rgb(166, 25, 61);
+}
+
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(166, 25, 61, 0.3);
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+}
+
+input[type="text"], textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: rgb(166, 25, 61);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(130, 20, 50)
+}

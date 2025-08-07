@@ -1,0 +1,84 @@
+/* style_dados.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  min-height: 100vh;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('crediamigologo.png'); /* ou URL externa */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1; /* nível de transparência */
+  z-index: 0;
+  pointer-events: none;
+}
+
+main {
+  background-color: rgba(166, 25, 61, 0.9);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 0 20px rgba(255, 0, 70, 0.7);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid #fff;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #fff;
+  color: rgb(166, 25, 61);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button-limpar {
+  margin-top: 1rem;
+  background-color: #ec7732;
+  color: rgb(255, 255, 255);
+}
+
+main{
+  position: relative;
+}
