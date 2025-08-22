@@ -52,7 +52,7 @@ document.getElementById("limpar").addEventListener("click", () => {
 });
 
 voltar.addEventListener("click", () =>{
-  window.location.href = "cadastro.html";
+  window.location.href = "index.html";
 });
 
 mostrarDados(dados);
