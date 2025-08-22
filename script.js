@@ -1,4 +1,5 @@
 // script.js
+
 document.getElementById("cadastroForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
