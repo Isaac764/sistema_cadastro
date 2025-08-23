@@ -1,26 +1,33 @@
 // script_dados.js
-const dados = JSON.parse(localStorage.getItem("clientes")) || [];
-const tbody = document.querySelector("tbody");
-const filtro = document.getElementById("filtro");
+import { db } from "./firebase.js";
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-function mostrarDados(lista) {
-  tbody.innerHTML = "";
-  lista.forEach(cliente => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${cliente.nome}</td>
-      <td>${cliente.unidade}</td>
-      <td>${cliente.bairro}</td>
-      <td>${cliente.cidade}</td>
-      <td>${cliente.endereco}</td>
-      <td>${cliente.contato}</td>
-      <td>${cliente.atividade}</td>
-      <td>${cliente.tempo}</td>
-      <td>${cliente.observacao}</td>
+async function carregarClientes() {
+  const tabela = document.getElementById("tabelaClientes").querySelector("tbody");
+  tabela.innerHTML = "";
+
+  const querySnapshot = await getDocs(collection(db, "clientes"));
+  querySnapshot.forEach((doc) => {
+    const cliente = doc.data();
+    const row = `
+      <tr>
+        <td>${cliente.nome}</td>
+        <td>${cliente.unidade}</td>
+        <td>${cliente.bairro}</td>
+        <td>${cliente.cidade}</td>
+        <td>${cliente.endereco}</td>
+        <td>${cliente.contato}</td>
+        <td>${cliente.atividade}</td>
+        <td>${cliente.tempo}</td>
+        <td>${cliente.observacao}</td>
+        <td>${cliente.compartilhar}</td>
+      </tr>
     `;
-    tbody.appendChild(tr);
+    tabela.innerHTML += row;
   });
 }
+
+window.onload = carregarClientes;
 
 filtro.addEventListener("input", () => {
   const termo = filtro.value.toLowerCase();
@@ -56,3 +63,4 @@ voltar.addEventListener("click", () =>{
 });
 
 mostrarDados(dados);
+

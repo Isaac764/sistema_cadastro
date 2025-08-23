@@ -10,7 +10,28 @@
 </head>
 <body>
 
-  <main>      
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAvF3aaTvmSBSp9ME1qT06CNfnookMayhw",
+    authDomain: "crediamigo-ao.firebaseapp.com",
+    databaseURL: "https://crediamigo-ao-default-rtdb.firebaseio.com",
+    projectId: "crediamigo-ao",
+    storageBucket: "crediamigo-ao.firebasestorage.app",
+    messagingSenderId: "826282097306",
+    appId: "1:826282097306:web:6aef0fb35e01909ffbfd23"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+
+  <main>
 
     <h1>Cadastro de Cliente</h1>
 
@@ -37,7 +58,7 @@
       <input type="text" id="atividade" name="atividade" required>
 
       <label for="tempo">Tempo de atividade:</label>
-      <input type="text" id="tempo" name="tempo" required>      
+      <input type="text" id="tempo" name="tempo" required>
 
       <label for="observacao">Observação (máx 2500 caracteres):</label>
       <textarea id="observacao" name="observacao" maxlength="2500"></textarea>

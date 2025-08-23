@@ -1,9 +1,10 @@
-// script.js
+import { db } from "./firebase.js";
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-document.getElementById("cadastroForm").addEventListener("submit", function (e) {
+document.getElementById("formCadastro").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const formData = {
+  const formData= {
     nome: document.getElementById("nome").value,
     unidade: document.getElementById("unidade").value,
     bairro: document.getElementById("bairro").value,
@@ -13,13 +14,27 @@ document.getElementById("cadastroForm").addEventListener("submit", function (e) 
     atividade: document.getElementById("atividade").value,
     tempo: document.getElementById("tempo").value,
     observacao: document.getElementById("observacao").value,
-    compartilhar: document.getElementById("compartilhar").checked
+    compartilhar: document.getElementById("compartilhar").checked,
   };
 
-  let dados = JSON.parse(localStorage.getItem("clientes")) || [];
-  dados.push(formData);
-  localStorage.setItem("clientes", JSON.stringify(dados));
+  try {
+    await addDoc(collection(db, "clientes"), {
+      nome,
+      unidade,
+      bairro,
+      cidade,
+      contato,
+      atividade,
+      tempo,
+      observacao,
+     status: "Pendente"
 
-  alert("Informações salvas com sucesso!");
+    });
+    alert("Cliente cadastrado com sucesso!");
+    e.target.reset();
+  } catch (err) {
+    console.error("Erro ao salvar:", err);
+  }
   window.location.href = "dados.html";
 });
+
